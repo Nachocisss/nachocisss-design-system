@@ -1,21 +1,23 @@
-// vite.config.js
+// vite.config.ts
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Crear __filename y __dirname para módulos ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export default defineConfig({
   plugins: [react()],
   build: {
     lib: {
-      // Puedes usar un index que re-exporte todos los componentes o apuntar a un componente en particular.
-      entry: path.resolve(__dirname, 'src/components/Button.jsx'),
+      entry: path.resolve(__dirname, 'src/index.jsx'),  // Usamos el archivo index
       name: 'DesignSystem',
-      // Opcional: define los formatos (UMD, ESM, etc.)
       formats: ['es', 'umd'],
       fileName: (format) => `design-system.${format}.js`
     },
     rollupOptions: {
-      // Marca como externas dependencias que no quieras incluir en tu bundle (por ejemplo, react)
       external: ['react', 'react-dom']
     }
   }
