@@ -11,7 +11,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.jsx'),
-      name: 'DesignSystem',
+      name: 'nachocisss-design-system',
       formats: ['es', 'umd'],
       fileName: (format) => `design-system.${format}.js`
     },
