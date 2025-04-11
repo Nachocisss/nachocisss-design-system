@@ -9,5 +9,9 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "types": ["node"],
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
   }
 }
